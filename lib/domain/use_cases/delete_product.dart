@@ -1,0 +1,9 @@
+import '../repositories/product_repository.dart';
+
+class DeleteProduct {
+  final ProductRepository repository;
+
+  DeleteProduct(this.repository);
+
+  void call(String productId) => repository.deleteProduct(productId);
+}
