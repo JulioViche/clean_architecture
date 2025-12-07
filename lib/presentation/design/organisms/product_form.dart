@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../domain/entities/product.dart';
-import '../providers/product_provider.dart';
+import '../../../../domain/entities/product.dart';
+import '../../providers/product_provider.dart';
 import '../molecules/form_text_field.dart';
 import '../atoms/custom_button.dart';
 

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../domain/entities/product.dart';
 import '../providers/product_provider.dart';
-import '../templates/list_page_template.dart';
-import '../organisms/product_list.dart';
-import '../organisms/product_form.dart';
-import '../organisms/delete_dialog.dart';
-import '../templates/form_dialog_template.dart';
+import '../design/templates/list_page_template.dart';
+import '../design/organisms/product_list.dart';
+import '../design/organisms/product_form.dart';
+import '../design/organisms/delete_dialog.dart';
+import '../design/templates/form_dialog_template.dart';
 
 /// Página: Pantalla principal con lista de productos
 class ProductListPage extends StatelessWidget {

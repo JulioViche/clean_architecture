@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../domain/entities/product.dart';
+import '../../../../domain/entities/product.dart';
 import '../molecules/product_info.dart';
 import '../molecules/action_buttons.dart';
 
