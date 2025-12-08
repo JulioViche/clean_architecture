@@ -19,9 +19,10 @@ import 'presentation/pages/product_list_page.dart';
 void main() {
   // 1. CAPA DE DATOS: Crear datasource con datos iniciales
   final datasource = ProductMemoryDatasource();
-  datasource.add(Product(id: '1', name: 'iPhone 15 Pro', price: 999.99));
-  datasource.add(Product(id: '2', name: 'Samsung Galaxy S24', price: 899.99));
-  datasource.add(Product(id: '3', name: 'MacBook Air M3', price: 1299.99));
+  // El ID será generado automáticamente (PRO-001, PRO-002, etc.)
+  datasource.add(Product(id: '', name: 'iPhone 15 Pro', price: 999.99));
+  datasource.add(Product(id: '', name: 'Samsung Galaxy S24', price: 899.99));
+  datasource.add(Product(id: '', name: 'MacBook Air M3', price: 1299.99));
 
   // 2. CAPA DE DATOS: Crear repositorio
   final repository = ProductRepositoryImpl(datasource);

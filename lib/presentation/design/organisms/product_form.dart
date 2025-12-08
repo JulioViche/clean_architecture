@@ -17,7 +17,6 @@ class ProductForm extends StatefulWidget {
 
 class _ProductFormState extends State<ProductForm> {
   final _formKey = GlobalKey<FormState>();
-  late TextEditingController _idController;
   late TextEditingController _nameController;
   late TextEditingController _priceController;
 
@@ -26,7 +25,6 @@ class _ProductFormState extends State<ProductForm> {
   @override
   void initState() {
     super.initState();
-    _idController = TextEditingController(text: widget.product?.id ?? '');
     _nameController = TextEditingController(text: widget.product?.name ?? '');
     _priceController = TextEditingController(
       text: widget.product?.price.toString() ?? '',
@@ -35,7 +33,6 @@ class _ProductFormState extends State<ProductForm> {
 
   @override
   void dispose() {
-    _idController.dispose();
     _nameController.dispose();
     _priceController.dispose();
     super.dispose();
@@ -48,19 +45,6 @@ class _ProductFormState extends State<ProductForm> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          FormTextField(
-            controller: _idController,
-            label: 'ID',
-            icon: Icons.tag,
-            enabled: !isEditing,
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'El ID es obligatorio';
-              }
-              return null;
-            },
-          ),
-          const SizedBox(height: 16),
           FormTextField(
             controller: _nameController,
             label: 'Nombre',
@@ -115,18 +99,24 @@ class _ProductFormState extends State<ProductForm> {
 
   void _saveProduct() {
     if (_formKey.currentState!.validate()) {
-      final product = Product(
-        id: _idController.text.trim(),
-        name: _nameController.text.trim(),
-        price: double.parse(_priceController.text.trim()),
-      );
-
       final provider = context.read<ProductProvider>();
 
       if (isEditing) {
+        // Al editar, mantener el ID original del producto
+        final product = Product(
+          id: widget.product!.id,
+          name: _nameController.text.trim(),
+          price: double.parse(_priceController.text.trim()),
+        );
         provider.update(product);
         _showSnackBar(context, '${product.name} actualizado', Colors.green);
       } else {
+        // Al crear, el ID se genera automáticamente en el datasource
+        final product = Product(
+          id: '', // El datasource lo ignorará y generará uno nuevo
+          name: _nameController.text.trim(),
+          price: double.parse(_priceController.text.trim()),
+        );
         provider.add(product);
         _showSnackBar(context, '${product.name} agregado', Colors.blue);
       }
