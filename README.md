@@ -91,6 +91,28 @@ La aplicación permite gestionar un catálogo de productos:
 flutter test
 ```
 
+## 📊 Diagramas
+
+El proyecto incluye diagramas visuales que explican la arquitectura y flujos:
+
+### Mapa Mental - CRUD a Nivel de Arquitectura
+
+Muestra el flujo de operaciones CRUD a través de las tres capas:
+
+![CRUD Arquitectura](docs/diagrams/crud_arch.png)
+
+### Mapa Mental - Provider
+
+Explica cómo funciona Provider en la aplicación:
+
+![Provider](docs/diagrams/provider.png)
+
+### Mapa Mental - CRUD UI
+
+Flujo de interacción del usuario con la interfaz:
+
+![CRUD UI](docs/diagrams/crud_ui.png)
+
 ## 📄 Licencia
 
 Este proyecto es de código abierto y está disponible bajo la licencia MIT.

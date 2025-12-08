@@ -208,4 +208,12 @@ Esta arquitectura de widgets permite máxima reutilización y mantenimiento del 
 
 ### Mapa Conceptual
 
-Se debe incluir un **mapa conceptual o mental** que explique la interacción entre las capas.
+El siguiente diagrama muestra la interacción entre las capas de Clean Architecture:
+
+![Diagrama de Capas Clean Architecture](diagrams/clean_architecture.png)
+
+**Flujo de dependencias:**
+- Presentation depende de Domain (UseCases)
+- Domain define contratos (Repository Interface)
+- Data implementa contratos del Domain
+- Las capas externas dependen de las internas, nunca al revés
