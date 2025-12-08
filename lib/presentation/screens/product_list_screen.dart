@@ -9,8 +9,8 @@ import '../design/organisms/delete_dialog.dart';
 import '../design/templates/form_dialog_template.dart';
 
 /// Página: Pantalla principal con lista de productos
-class ProductListPage extends StatelessWidget {
-  const ProductListPage({super.key});
+class ProductListScreen extends StatelessWidget {
+  const ProductListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

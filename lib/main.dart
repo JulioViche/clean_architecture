@@ -14,7 +14,7 @@ import 'domain/use_cases/update_product.dart';
 
 // Presentation Layer
 import 'presentation/providers/product_provider.dart';
-import 'presentation/pages/product_list_page.dart';
+import 'presentation/screens/product_list_screen.dart';
 
 void main() {
   // 1. CAPA DE DATOS: Crear datasource con datos iniciales
@@ -61,7 +61,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           useMaterial3: true,
         ),
-        home: const ProductListPage(),
+        home: const ProductListScreen(),
       ),
     );
   }
